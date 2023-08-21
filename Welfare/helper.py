@@ -1,4 +1,3 @@
-
 import numpy as np
 from pandas import DataFrame, MultiIndex, concat
 from math import sqrt
@@ -485,7 +484,7 @@ def ext_ols(data, y, x):
         mylist.append(item)
 
     table = DataFrame(mylist,
-                   index=MultiIndex.from_arrays([yname_list, xname_list], names=['종속변수', '독립변수']))
+                index=MultiIndex.from_arrays([yname_list, xname_list], names=['종속변수', '독립변수']))
     
     # 분석결과
     result = "𝑅(%s), 𝑅^2(%s), 𝐹(%s), 유의확률(%s), Durbin-Watson(%s)" % (my['R-squared'], my['Adj. R-squared'], my['F-statistic'], my['Prob (F-statistic)'], my['Durbin-Watson'])
@@ -700,7 +699,7 @@ def my_logit(data, y, x):
                 if key and value:
                     my[key] = value
     
-     # 두 번째 표의 내용을 딕셔너리로 분해하여 my에 추가
+    # 두 번째 표의 내용을 딕셔너리로 분해하여 my에 추가
     my['variables'] = []
     name_list = list(data.columns)
 
@@ -753,7 +752,7 @@ def my_logit(data, y, x):
             mylist.append(item)
     
         table = DataFrame(mylist,
-                          index=MultiIndex.from_arrays([yname_list, xname_list], names=['종속변수', '독립변수']))
+                        index=MultiIndex.from_arrays([yname_list, xname_list], names=['종속변수', '독립변수']))
     
     # 분석결과
     result = "𝑅(%s), 𝑅^2(%s), 𝐹(%s), 유의확률(%s), Durbin-Watson(%s)" % (my['R-squared'], my['Adj. R-squared'], my['F-statistic'], my['Prob (F-statistic)'], my['Durbin-Watson'])
